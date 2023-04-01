@@ -1,0 +1,32 @@
+body{
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+.card-title{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.logo-img{
+  padding: 10px;
+  aspect-ratio: 1.5;
+  /* width:clamp() */
+  width: 200px;
+}
+.drop{
+  display: flex;
+  justify-content: center;
+}
+.drop-box{
+  width: 700px;
+  width: clamp(100px,500px,700px);
+  border: 2.5px skyblue dashed ;
+}
+.drop-area{
+padding: 10%;
+}
