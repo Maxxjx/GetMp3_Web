@@ -14,7 +14,7 @@ html {
 }
 
 body {
-  background: url(./Asset/976013.jpg) no-repeat center fixed;
+  background: url(../static/976013.jpg) no-repeat center fixed;
   background-size: cover;
 }
 .logo{

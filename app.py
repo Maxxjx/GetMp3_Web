@@ -2,7 +2,7 @@ from flask import Flask, request, render_template,send_file
 import os
 from moviepy.editor import *
 
-app = Flask(__name__)
+app = Flask(__name__,static_folder='static')
 
 @app.route('/')
 def home():
