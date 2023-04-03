@@ -7,16 +7,28 @@ var dropZone = document.getElementById('drop_zone');
 			event.stopPropagation();
 		});
 
-		// Handle dropped files
 		dropZone.addEventListener('drop', function(event) {
 			event.preventDefault();
 			event.stopPropagation();
 
 			// Get file data
-			var files = event.dataTransfer.files;
+			var file = event.dataTransfer.files[0];
 
-			// Do something with the file(s)
-			console.log(files);
+			// Send file to server using AJAX
+			var xhr = new XMLHttpRequest();
+			var formData = new FormData();
+
+			formData.append('video', file);
+
+			xhr.open('POST', '/upload');
+			xhr.send(formData);
+
+			// Do something after file has been uploaded
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState === XMLHttpRequest.DONE) {
+					console.log(xhr.responseText);
+				}
+			};
 		});
 
     function submitForm() {
