@@ -1,0 +1,5 @@
+v1=c(1,3,5,7,9)
+v2=c(2,4,6,8,10)
+cat("the original vector:",v1,"And",v2)
+cat("combine it by row: ",rbind(v1,v2))
+cat("combine it by coloum",cbind(v1,v2))

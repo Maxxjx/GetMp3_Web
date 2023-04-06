@@ -1,16 +1,20 @@
-from flask import Flask, request, render_template,send_file
+from flask import Flask, request, render_template, send_file
 import os
-from moviepy.editor import *
+from moviepy.editor import VideoFileClip
 
-app = Flask(__name__,static_folder='static')
+
+
+app = Flask(__name__, static_folder='static')
+
 
 @app.route('/')
 def home():
     return render_template('index.html')
 
+
 @app.route('/upload', methods=['POST'])
 def audio_extract():
-      if request.method == 'POST':
+    if request.method == 'POST':
         f = request.files['file']
         filename = f.filename
         f.save(filename)
@@ -18,6 +22,9 @@ def audio_extract():
         video = VideoFileClip(filename)
         audio = video.audio
         audio.write_audiofile(audio_filename)
+        video.close()
+        audio.close()
+        os.remove(filename)
         return send_file(audio_filename, as_attachment=True)
 
 
