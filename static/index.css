@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@1,200;1,400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  font-size: 16px;
+  color: whitesmoke;
+}
+
+body {
+  background: url(../static/976013.jpg) no-repeat center fixed;
+  background-size: cover;
+}
+.logo{
+  width: 100%;
+  display: flex;
+  justify-content:center ;
+  padding: 18%;
+}
+.container{
+  width: 100%;
+  padding: 2%;
+  display: flex;
+  justify-content: center;
+
+}
+
+.blured {
+  -webkit-backdrop-filter:blur(5px) brightness(82%);
+  backdrop-filter: blur(9px) brightness(80%);
+  text-align: center;
+  font-family: "JetBrains Mono", monospace;
+}
+.intro {
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+.intro2{
+  display: none;
+}
+.drop-box {
+  padding: 1.9rem;
+  margin-block: 15px;
+}
+#drop_zone {
+  border: 2px skyblue dashed;
+  padding: 3rem;
+}
+#fileInput,
+#drop_zone {
+  font-weight: bolder;
+  line-height: 2.8em;
+}
+
+/* input[type="file"] {
+  display: none;
+}
+
+#file-upload-label {
+  background-color: #3498db;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 15px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+#file-upload-label:hover {
+  background-color: #2980b9;
+} */
+
+.download{
+  padding: 1rem;
+  text-align: center;
+}
+.download > button {
+  background-color: seagreen;
+  color: #fff;
+  cursor: pointer;
+  padding: 15px 25px;
+  display: inline-block;
+  border-radius: 5px;
+  border: seagreen;
+}
+button:hover {
+  background-color: #2980b9;
+}
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+  .logo  {padding: 0;}
+  .intro2{
+    display:inline-block;
+  }
+}
