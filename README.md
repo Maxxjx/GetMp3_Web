@@ -1,11 +1,11 @@
-# GetMp3_Web
+# GetMp3
 
 This project is a Flask web application that allows users to upload video files and extract audio from them. The extracted audio is then made available for download in MP3 format.
 
 ## Project Structure
 
 ```
-flask-audio-extractor
+GetMp3
 ├── app.py                # Main application file with Flask routes and audio extraction logic
 ├── requirements.txt      # Lists the dependencies required for the project
 ├── static                # Directory for static files (currently empty)
