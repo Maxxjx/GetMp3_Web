@@ -1,36 +1,43 @@
+function submitForm() {
+	const form = document.getElementById('myForm');
+	const formData = new FormData(form);
+	const xhr = new XMLHttpRequest();
 
-var dropZone = document.getElementById('drop_zone');
+	xhr.open('POST', form.action, true);
 
-		// Prevent default drag behaviors
-		dropZone.addEventListener('dragover', function(event) {
-			event.preventDefault();
-			event.stopPropagation();
-		});
+	xhr.upload.onprogress = function(event) {
+		if (event.lengthComputable) {
+			const percentComplete = (event.loaded / event.total) * 100;
+			document.getElementById('progressBar').style.width = percentComplete + '%';
+			document.getElementById('progressText').innerText = Math.round(percentComplete) + '%';
+		}
+	};
 
-		dropZone.addEventListener('drop', function(event) {
-			event.preventDefault();
-			event.stopPropagation();
+	xhr.onloadstart = function() {
+		document.getElementById('progressContainer').classList.remove('hidden');
+	};
 
-			// Get file data
-			var file = event.dataTransfer.files[0];
+	xhr.onload = function() {
+		if (xhr.status === 200) {
+			// Handle successful upload
+			alert('File uploaded successfully!');
+		} else {
+			// Handle error
+			alert('Error uploading file.');
+		}
+	};
 
-			// Send file to server using AJAX
-			var xhr = new XMLHttpRequest();
-			var formData = new FormData();
+	xhr.send(formData);
+}
 
-			formData.append('video', file);
+function handleDrop(event) {
+	event.preventDefault();
+	const files = event.dataTransfer.files;
+	if (files.length > 0) {
+		document.getElementById('fileInput').files = files;
+	}
+}
 
-			xhr.open('POST', '/upload');
-			xhr.send(formData);
-
-			// Do something after file has been uploaded
-			xhr.onreadystatechange = function() {
-				if (xhr.readyState === XMLHttpRequest.DONE) {
-					console.log(xhr.responseText);
-				}
-			};
-		});
-
-    function submitForm() {
-      document.getElementById('myForm').submit();
-    }
+function handleDragOver(event) {
+	event.preventDefault();
+}

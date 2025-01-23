@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
-    <script src="{{ url_for('static', filename='index.js') }}"></script>
+    <link rel="stylesheet" href="/static/index.css">
+    <script src="/static/index.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <title>GetMp3</title>
   </head>
@@ -62,50 +62,6 @@
         </div>
       </div>
     </section>
-    <script>
-        function submitForm() {
-          const form = document.getElementById('myForm');
-          const formData = new FormData(form);
-          const xhr = new XMLHttpRequest();
-  
-          xhr.open('POST', form.action, true);
-  
-          xhr.upload.onprogress = function(event) {
-            if (event.lengthComputable) {
-              const percentComplete = (event.loaded / event.total) * 100;
-              document.getElementById('progressBar').style.width = percentComplete + '%';
-              document.getElementById('progressText').innerText = Math.round(percentComplete) + '%';
-            }
-          };
-  
-          xhr.onloadstart = function() {
-            document.getElementById('progressContainer').classList.remove('hidden');
-          };
-  
-          xhr.onload = function() {
-            if (xhr.status === 200) {
-              // Handle successful upload
-              alert('File uploaded successfully!');
-            } else {
-              // Handle error
-              alert('Error uploading file.');
-            }
-          };
-  
-          xhr.send(formData);
-        }
-  
-        function handleDrop(event) {
-          event.preventDefault();
-          const files = event.dataTransfer.files;
-          if (files.length > 0) {
-            document.getElementById('fileInput').files = files;
-          }
-        }
-  
-        function handleDragOver(event) {
-          event.preventDefault();
-        }
-      </script>
+    
   </body>
 </html>
