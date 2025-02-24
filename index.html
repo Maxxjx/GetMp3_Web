@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/static/index.css">
-    <link rel="canonical" href="https://www.bganime.netlify.app/"/>
+    <link rel="stylesheet" href="/static/index.css" />
+    <link rel="canonical" href="https://www.bganime.netlify.app/" />
     <title>GetMp3 - Extract Audio from Video Files Easily and Quickly</title>
     <meta name="description" content="GetMp3 is a free online tool that allows you to extract audio from video files quickly and easily. Convert any video to audio in just a few clicks with our user-friendly interface."/>
     <meta name="keywords" content="GetMp3, GetMp3 online, GetMp3 converter, GetMp3 video to audio, GetMp3 audio converter, GetMp3 video converter, GetMp3 audio extractor, GetMp3 video extractor, GetMp3 audio converter online, GetMp3 video converter online, GetMp3 audio extractor online, GetMp3 video extractor online, GetMp3 audio converter free, GetMp3 video converter free, GetMp3 audio extractor free, GetMp3 video extractor free, GetMp3 audio converter free online, GetMp3 video converter free online, GetMp3 audio extractor free online, GetMp3 video extractor free online"/>
-    <script src="/static/index.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="/static/index.js"></script>
+    <script defer src="https://cdn.tailwindcss.com"></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -24,54 +24,41 @@
           "query-input": "required name=search_term_string"
         }
       }
-      </script>
-
+    </script>
   </head>
   <body>
     <section class="container mx-auto p-6">
       <div class="content mx-auto max-w-4xl blured p-8 rounded-lg shadow-lg">
         <div class="intro mb-6">
           <p>
-            Welcome to GetMp3, your one-stop destination for extracting audio from
-            your favorite video files quickly and easily.
-            <span class="block mt-2 text-700">
-              With our user-friendly interface, you can convert any video to audio in just a few clicks.
-              Say goodbye to complex software and hello to hassle-free audio
-              extraction with GetMp3.
-            </span>
+            Welcome to GetMp3, your one-stop destination for extracting audio from your favorite video files quickly and easily.
           </p>
         </div>
         <div class="drop-box mb-6">
-            <div id="drop_zone" class="drop-area border-2 border-dashed border-gray-300 p-6 rounded-lg text-center" ondrop="handleDrop(event)" ondragover="handleDragOver(event)">
-
+          <div id="drop_zone" class="drop-area border-2 border-dashed border-gray-300 p-6 rounded-lg text-center"
+            ondrop="handleDrop(event)" ondragover="handleDragOver(event)">
             <p class="mb-2">Drag and drop your file</p>
             <p class="mb-4">(or)</p>
             <div>
-                <form
-                id="myForm"
-                method="POST"
-                enctype="multipart/form-data"
-                action="/upload"
-              >
-                <input type="file" name="file" id="fileInput" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" />
+              <form id="myForm" method="POST" enctype="multipart/form-data" action="http://127.0.0.1:5000/upload">
+                <label for="fileInput" class="sr-only">Upload file</label>
+                <input type="file" name="file" id="fileInput"
+                  class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" />
+                <noscript>Please enable JavaScript to use the file upload feature.</noscript>
               </form>
             </div>
           </div>
         </div>
-        <div class="progress-bar mb-6 hidden" id="progressContainer">
-            <div class="w-full bg-gray-200 rounded-full h-4">
-              <div id="progressBar" class="bg-blue-500 h-4 rounded-full" style="width: 0%;"></div>
-            </div>
-            <div class="text-center mt-2">
-              <span id="progressText" class="text-sm text-gray-700">0%</span>
-            </div>
+        <div class="progress-bar mb-6 hidden" id="progressContainer" aria-live="polite">
+          <div class="w-full bg-gray-200 rounded-full h-4">
+            <div id="progressBar" class="bg-blue-500 h-4 rounded-full" style="width: 0%;"></div>
           </div>
+          <div class="text-center mt-2">
+            <span id="progressText" class="text-sm text-gray-700">0%</span>
+          </div>
+        </div>
         <div class="download text-center">
-          <button
-            type="button"
-            onclick="submitForm()"
-            class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600"
-          >
+          <button id="downloadBtn" type="button" class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600">
             Download
           </button>
         </div>
@@ -80,6 +67,5 @@
         </div>
       </div>
     </section>
-    
   </body>
 </html>

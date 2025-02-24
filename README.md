@@ -1,55 +1,112 @@
+## Logo
+
+![GetMp3 Logo](path/to/logo.png)
+
 # GetMp3
 
-This project is a Flask web application that allows users to upload video files and extract audio from them. The extracted audio is then made available for download in MP3 format.
+A Flask web application that extracts audio from video files and provides instant MP3 downloads, featuring drag-and-drop support and progress tracking.
+
+## Features
+
+- Drag and drop video file upload
+- Real-time progress tracking during upload and processing
+- Secure temporary file handling (no permanent storage on server)
+- Instant MP3 download with filename based on original video
+- Mobile-responsive design
+- CORS support for API access
+- User-friendly interface
+
+## 📸 Screenshots
+
+| Home Page |  Download Page |
+|:---------:|:----------:|
+| ![Home Page](Asset/screenshots/home.png) | ![About Page](Asset/screenshots/about.png) |
+
 
 ## Project Structure
 
 ```
-GetMp3
-├── app.py                # Main application file with Flask routes and audio extraction logic
-├── requirements.txt      # Lists the dependencies required for the project
-├── static                # Directory for static files (currently empty)
-├── templates             # Directory for HTML templates
-│   └── index.html       # HTML template for the home page
-├── uploads               # Directory for temporarily storing uploaded video files (currently empty)
-└── README.md             # Documentation for the project
+GetMp3/
+├── __pycache__/               # Python cache directory
+│   └── app.cpython-310.pyc
+├── app.py                    # Flask application with audio extraction logic
+├── index.html                # Main HTML template
+├── README.md                 # This file - project documentation
+├── requirements.txt          # Python dependencies
+├── robots.txt                # Search engine crawl rules
+├── static/                   # Static assets
+│   ├── backcover.jpeg        # Background image
+│   ├── index.css             # CSS styles
+│   ├── index.js              # JavaScript logic
+│   └── photo.jpg             # Another image asset
+└── uploads/                  # Directory for temporarily storing uploaded files (cleared after processing)
 ```
 
 ## Requirements
 
-To run this application, you need to have Python installed along with the following packages:
+- Python 3.6+
+- Flask==2.0.3
+- moviepy==1.0.3
+- Werkzeug==2.0.3
+- Flask-Cors==3.0.10
+- python-dotenv==1.0.0
 
-- Flask
-- MoviePy
+## Installation
 
-You can install the required packages using pip. First, create a virtual environment (optional but recommended):
+1.  Clone the repository:
 
-```
-python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-```
+    ```bash
+    git clone [repository_url]
+    cd GetMp3
+    ```
 
-Then, install the dependencies:
+2.  Create a virtual environment:
 
-```
-pip install -r requirements.txt
-```
+    ```bash
+    python -m venv venv
+    ```
 
-## Running the Application
+3.  Activate the virtual environment:
 
-To start the Flask application, run the following command:
+    -   On Linux/macOS:
 
-```
-python app.py
-```
+        ```bash
+        source venv/bin/activate
+        ```
 
-The application will be accessible at `http://127.0.0.1:5000/`.
+    -   On Windows:
+
+        ```bash
+        .\venv\Scripts\activate
+        ```
+
+4.  Install dependencies:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 ## Usage
 
-1. Navigate to the home page.
-2. Upload a video file.
-3. The application will extract the audio and provide a link to download the audio file in MP3 format.
+1.  Run the Flask application:
+
+    ```bash
+    python app.py
+    ```
+
+2.  Open your web browser and go to `http://127.0.0.1:5000/`
+
+3.  Drag and drop a video file into the designated area, or use the file input to select a video.
+
+4.  Wait for the upload and processing to complete. A progress bar will indicate the progress.
+
+5.  Once processing is finished, the "Download" button will be enabled. Click it to download the extracted MP3 audio file.  The filename will be based on the original video's filename.
+
+## Notes
+
+-   The application uses temporary file storage for processing, ensuring no files are permanently stored on the server.
+-   CORS is enabled to allow requests from different origins.
+-   The [robots.txt](http://_vscodecontentref_/8) file disallows crawling of the [uploads](http://_vscodecontentref_/9) directory.
 
 ## License
 

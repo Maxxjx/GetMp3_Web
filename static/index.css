@@ -14,7 +14,7 @@ html {
 }
 
 body {
-  background: url(../static/976013.jpg) no-repeat center fixed;
+  background: url(../static/backcover.jpeg) no-repeat center fixed;
   background-size: cover;
 }
 .logo{
@@ -129,4 +129,20 @@ button:hover {
   .intro2{
     display:inline-block;
   }
+}
+
+.intro, .drop-box, #drop_zone {
+  transition: all 0.3s ease-in-out;
+}
+
+.drop-box.compact {
+  padding: 0.5rem;
+}
+
+#drop_zone.compact {
+  padding: 1rem;
+}
+
+.progress-bar {
+  transition: opacity 0.3s ease-in-out;
 }
