@@ -1,0 +1,15 @@
+# Byte-compiled files
+*.py[cod]
+*$py.class
+
+# Python cache directory
+__pycache__/
+
+# Virtual environment directories
+venv/
+env/
+ENV/
+
+# Temporary files
+*.tmp
+*.log

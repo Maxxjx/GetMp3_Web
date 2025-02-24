@@ -10,6 +10,7 @@ CORS(app)  # enable CORS globally
 
 @app.route('/')
 def home():
+    # Renders the new index.html located in the templates folder
     return render_template('index.html')
 
 @app.route('/upload', methods=['POST'])

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Extractor</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M19 12C19 13.8565 18.2625 15.637 16.9497 16.9497C15.637 18.2625 13.8565 19 12 19C10.1435 19 8.36301 18.2625 7.05025 16.9497C5.7375 15.637 5 13.8565 5 12C5 10.1435 5.7375 8.36301 7.05025 7.05025C8.36301 5.7375 10.1435 5 12 5C13.8565 5 15.637 5.7375 16.9497 7.05025C18.2625 8.36301 19 10.1435 19 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h1>Audio Extractor</h1>
+            </div>
+            <p>Extract audio from your videos with ease</p>
+        </header>
+        <main>
+            <div id="drop-area" class="drop-area">
+                <p>Drag & drop your video file here</p>
+                <p>or</p>
+                <label for="file-input" class="file-input-label">Choose a file</label>
+                <input type="file" id="file-input" accept="video/*" hidden>
+            </div>
+            <div id="progress-container" class="progress-container" hidden>
+                <div id="progress-bar" class="progress-bar"></div>
+                <p id="progress-text">Uploading: 0%</p>
+            </div>
+            <div id="error-message" class="error-message" hidden></div>
+            <button id="download-btn" class="download-btn" disabled>Download Audio</button>
+        </main>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
+

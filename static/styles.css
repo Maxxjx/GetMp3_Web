@@ -1,0 +1,161 @@
+:root {
+  --bg-color: #1a1a2e;       /* Dark background */
+  --text-color: #e0e0e0;     /* Light text */
+  --primary-color: #2980b9;  /* Blue primary */
+  --secondary-color: #3498db;/* Lighter blue for secondary accents */
+  --accent-color: #16213e;   /* Dark accent for card backgrounds */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 600px;
+  width: 90%;
+  padding: 2rem;
+  background-color: var(--accent-color);
+  border-radius: 10px;
+  /* Update box-shadow to reflect primary blue tint */
+  border-radius: 10px;
+  /* Update box-shadow to reflect primary blue tint */
+  box-shadow: 0 0 20px rgba(41, 128, 185, 0.4);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.logo svg {
+  margin-right: 0.5rem;
+  color: var(--primary-color);
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+header p {
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.drop-area {
+  border: 2px dashed var(--primary-color);
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.drop-area:hover {
+  background-color: rgba(41, 128, 185, 0.1);
+}
+
+.file-input-label {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.file-input-label:hover {
+  background-color: var(--secondary-color);
+}
+
+.progress-container {
+  margin-top: 1rem;
+}
+
+.progress-bar {
+  height: 10px;
+  background-color: var(--primary-color);
+  width: 0;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.error-message {
+  color: var(--secondary-color);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.download-btn {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover:not(:disabled) {
+  background-color: var(--secondary-color);
+}
+
+.download-btn:disabled {
+  opacity: 1;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .drop-area {
+    padding: 1rem;
+  }
+}
+
+/* Glass-like card effect for elements (for example, used on cards or panels) */
+.blured {
+  background: rgba(26, 26, 46, 0.4); /* Transparent dark background */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter:blur(5px) brightness(82%);
+  backdrop-filter: blur(9px) brightness(80%);
+  text-align: center;
+  font-family: "JetBrains Mono", monospace;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
